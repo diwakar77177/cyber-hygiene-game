@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Guardian Challenge</title>
+    <!-- Tailwind CSS CDN for modern and responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to your external custom CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="flex flex-col items-center justify-center space-y-8">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Cyber Guardian Challenge</h1>
+            <p class="text-lg text-gray-700 max-w-prose leading-relaxed">
+                Welcome, aspiring Cyber Guardian! Test your knowledge and learn essential skills to protect yourself online. Navigate through scenarios, identify threats, and make smart choices to secure your digital life.
+            </p>
+            <button id="start-game-btn" class="button-primary text-xl">Start Challenge</button>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="game-screen" class="hidden w-full">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Scenario <span id="question-number">1</span> of <span id="total-questions">X</span></h2>
+            <div class="bg-blue-50 p-6 rounded-xl mb-6 border border-blue-200">
+                <p id="scenario-text" class="text-lg text-gray-800 font-medium leading-relaxed"></p>
+            </div>
+
+            <div id="answer-options" class="grid grid-cols-1 gap-4 mb-6">
+                <!-- Answer buttons will be dynamically inserted here -->
+            </div>
+
+            <div id="feedback-area" class="hidden">
+                <div id="feedback-message" class="feedback"></div>
+                <p id="explanation-text" class="explanation"></p>
+                <button id="next-question-btn" class="button-primary mt-6 hidden">Next Scenario</button>
+            </div>
+
+            <div class="mt-8 text-lg font-semibold text-gray-700">
+                Score: <span id="score-display" class="text-indigo-600">0</span>
+            </div>
+        </div>
+
+        <!-- End Screen -->
+        <div id="end-screen" class="hidden flex flex-col items-center justify-center space-y-8">
+            <h2 class="text-4xl font-extrabold text-gray-900">Challenge Complete!</h2>
+            <p class="text-xl text-gray-700">You scored <span id="final-score" class="text-indigo-600 font-bold">0</span> out of <span id="max-score" class="font-bold">0</span>!</p>
+            <p id="final-message" class="text-lg text-gray-700 max-w-prose leading-relaxed"></p>
+            <button id="restart-game-btn" class="button-primary text-xl">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Custom Modal for messages (instead of alert()) -->
+    <div id="custom-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="modal-close-btn">&times;</span>
+            <h3 id="modal-title" class="text-2xl font-bold text-gray-900 mb-4"></h3>
+            <p id="modal-message" class="text-lg text-gray-700"></p>
+            <button id="modal-ok-btn" class="button-primary mt-6">OK</button>
+        </div>
+    </div>
+
+    <!-- Link to your external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

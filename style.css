@@ -1,0 +1,228 @@
+/* Custom styles for the game, complementing Tailwind */
+body {
+    font-family: 'Inter', sans-serif;
+    /* Using Inter font for a clean look */
+    background-color: #f0f4f8;
+    /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Ensure it takes full viewport height */
+    margin: 0;
+    padding: 20px;
+    /* Add some padding around the content */
+    box-sizing: border-box;
+    /* Include padding in element's total width and height */
+}
+
+.game-container {
+    background-color: #ffffff;
+    /* White background for the game box */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    /* Soft shadow for depth */
+    border-radius: 1.5rem;
+    /* More rounded corners */
+    max-width: 900px;
+    /* Max width for larger screens */
+    width: 100%;
+    /* Full width on smaller screens */
+    padding: 2.5rem;
+    /* Increased padding */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-primary {
+    background-color: #4f46e5;
+    /* Indigo 600 */
+    color: white;
+    padding: 0.75rem 2rem;
+    /* Comfortable padding */
+    border-radius: 0.75rem;
+    /* Rounded corners */
+    font-weight: 600;
+    /* Semi-bold */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+    /* Soft shadow */
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    /* For proper padding and margin */
+}
+
+.button-primary:hover {
+    background-color: #4338ca;
+    /* Indigo 700 on hover */
+    transform: translateY(-2px);
+    /* Slight lift effect */
+}
+
+.button-primary:active {
+    transform: translateY(0);
+    /* Press down effect */
+    box-shadow: 0 2px 5px rgba(79, 70, 229, 0.3);
+    /* Smaller shadow on active */
+}
+
+.answer-button {
+    background-color: #e0e7ff;
+    /* Indigo 100 */
+    color: #3730a3;
+    /* Indigo 800 */
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    border: 2px solid #a5b4fc;
+    /* Indigo 300 border */
+    width: 100%;
+    /* Full width for options */
+    text-align: left;
+    /* Align text to left */
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    /* Space between icon and text */
+}
+
+.answer-button:hover {
+    background-color: #c7d2fe;
+    /* Indigo 200 on hover */
+    transform: translateY(-1px);
+}
+
+.answer-button.correct {
+    background-color: #d1fae5;
+    /* Green 100 */
+    border-color: #34d399;
+    /* Green 500 */
+    color: #065f46;
+    /* Green 800 */
+}
+
+.answer-button.wrong {
+    background-color: #fee2e2;
+    /* Red 100 */
+    border-color: #ef4444;
+    /* Red 500 */
+    color: #991b1b;
+    /* Red 800 */
+}
+
+/* Feedback message styling */
+.feedback {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+    /* Fade in animation */
+}
+
+.feedback.correct {
+    background-color: #d1fae5;
+    /* Green 100 */
+    color: #065f46;
+    /* Green 800 */
+}
+
+.feedback.wrong {
+    background-color: #fee2e2;
+    /* Red 100 */
+    color: #991b1b;
+    /* Red 800 */
+}
+
+/* Explanation text styling */
+.explanation {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #4b5563;
+    /* Gray 600 */
+    text-align: left;
+    animation: fadeIn 0.5s ease-out;
+    /* Fade in animation */
+}
+
+/* Custom Modal for alerts */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1000;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .game-container {
+        padding: 1.5rem;
+        border-radius: 1rem;
+    }
+
+    .button-primary,
+    .answer-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
